@@ -1,0 +1,103 @@
+@import "./mixins";
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.primary-nav {
+  width: 100%;
+  margin-bottom: 5rem;
+}
+
+.nav-links {
+  @include flexCenter(row);
+  justify-content: flex-end;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+
+  .nav-link {
+    margin: 0 1em;
+    list-style: none;
+    transition: 350ms;
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &:first-child {
+      font-size: 50px;
+      margin-right: auto;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    &.nav-link-button {
+      border-radius: 15px;
+      padding: 5px 10px;
+      border: 1px solid white;
+    }
+  }
+}
+
+.main-content {
+  @include flexCenter(column);
+  //   background-color: #c3aa94;
+  //   max-width: 65rem;
+  margin: 0 auto;
+
+  .section {
+    // @include flexCenter(column);
+
+    min-height: 100vh;
+    border-bottom: solid rgb(214, 4, 4) 8px;
+    width: 100%;
+
+    div {
+      max-width: 70rem;
+      margin: 0 auto;
+
+      .content-wrapper {
+        @include flexCenter(column);
+        color: #fff;
+      }
+
+      img {
+        width: 70%;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        font-weight: 400;
+        text-align: center;
+        margin-bottom: 0.75rem;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        font-weight: 100;
+        text-align: center;
+        margin-top: 0;
+      }
+    }
+
+    &.section--1 {
+      @include background(#c3aa94);
+      background: radial-gradient(#c3aa94, #9c846e);
+    }
+    &.section--2 {
+      @include background(#f1f1f1);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-link {
+    display: none;
+
+    &:first-child {
+      display: block;
+    }
+  }
+}
