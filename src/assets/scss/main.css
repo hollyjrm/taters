@@ -343,6 +343,7 @@ template {
 
 body {
   font-family: "Open Sans", sans-serif;
+  min-width: 320px;
 }
 
 .primary-nav {
@@ -384,8 +385,9 @@ body {
 }
 
 .nav-links .nav-link:first-child {
-  font-size: 50px;
+  font-size: 2rem;
   margin-right: auto;
+  text-transform: initial;
 }
 
 .nav-links .nav-link a {
@@ -396,7 +398,7 @@ body {
 .nav-links .nav-link.nav-link-button {
   border-radius: 15px;
   padding: 5px 10px;
-  border: 1px solid white;
+  border: 1px solid #fff;
 }
 
 .main-content {

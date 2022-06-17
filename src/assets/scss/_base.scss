@@ -1,7 +1,9 @@
 @import "./mixins";
+@import "./variables";
 
 body {
   font-family: "Open Sans", sans-serif;
+  min-width: 320px;
 }
 
 .primary-nav {
@@ -24,32 +26,29 @@ body {
     }
 
     &:first-child {
-      font-size: 50px;
+      font-size: 2rem;
       margin-right: auto;
+      text-transform: initial;
     }
 
     a {
       text-decoration: none;
-      color: #fff;
+      color: $mainText1;
     }
 
     &.nav-link-button {
       border-radius: 15px;
       padding: 5px 10px;
-      border: 1px solid white;
+      border: 1px solid $mainText1;
     }
   }
 }
 
 .main-content {
   @include flexCenter(column);
-  //   background-color: #c3aa94;
-  //   max-width: 65rem;
   margin: 0 auto;
 
   .section {
-    // @include flexCenter(column);
-
     min-height: 100vh;
     border-bottom: solid rgb(214, 4, 4) 8px;
     width: 100%;
@@ -60,7 +59,7 @@ body {
 
       .content-wrapper {
         @include flexCenter(column);
-        color: #fff;
+        color: $mainText1;
       }
 
       img {
@@ -83,8 +82,8 @@ body {
     }
 
     &.section--1 {
-      @include background(#c3aa94);
-      background: radial-gradient(#c3aa94, #9c846e);
+      @include background($accentColor1);
+      background: radial-gradient($accentColor1, $accentGradient1);
     }
     &.section--2 {
       @include background(#f1f1f1);
