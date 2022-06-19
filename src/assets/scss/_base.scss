@@ -104,6 +104,20 @@ body {
       h3 {
         @include infoText($mainText1);
       }
+
+      .sack-blur-left {
+        filter: blur(4px);
+        transform: scale(3) translate(-20%, 5%);
+        position: absolute;
+        z-index: 1;
+      }
+
+      .sack-blur-right {
+        filter: blur(4px);
+        transform: scale(3) translate(30%, 5%);
+        position: absolute;
+        z-index: 1;
+      }
     }
 
     &.section--1 {

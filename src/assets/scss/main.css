@@ -502,6 +502,18 @@ body {
   z-index: 99;
   text-align: center;
 }
+.main-content .section .content-wrapper--3 .sack-blur-left {
+  filter: blur(4px);
+  transform: scale(3) translate(-20%, 5%);
+  position: absolute;
+  z-index: 1;
+}
+.main-content .section .content-wrapper--3 .sack-blur-right {
+  filter: blur(4px);
+  transform: scale(3) translate(30%, 5%);
+  position: absolute;
+  z-index: 1;
+}
 .main-content .section.section--1 {
   background-color: #c3aa94;
   background: radial-gradient(#c3aa94, #9c846e);
