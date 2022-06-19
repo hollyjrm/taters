@@ -8,3 +8,21 @@
 @mixin background($color) {
   background-color: $color;
 }
+
+@mixin subHeaders($color) {
+  color: $color;
+  font-size: 2.5rem;
+  font-weight: 100;
+  position: relative;
+  z-index: 99;
+  text-align: center;
+}
+
+@mixin infoText($color) {
+  color: $color;
+  font-size: 1.25rem;
+  font-weight: 100;
+  position: relative;
+  z-index: 99;
+  text-align: center;
+}

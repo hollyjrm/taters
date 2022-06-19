@@ -1,47 +1,12 @@
 @import "./mixins";
 @import "./variables";
+@import "./typography";
+
+//component sass files
+@import "./components/components.navbar";
 
 body {
-  font-family: "Open Sans", sans-serif;
   min-width: 320px;
-}
-
-.primary-nav {
-  width: 100%;
-  margin-bottom: 5rem;
-}
-
-.nav-links {
-  @include flexCenter(row);
-  justify-content: flex-end;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-
-  .nav-link {
-    margin: 0 1em;
-    list-style: none;
-    transition: 350ms;
-    &:hover {
-      transform: scale(1.2);
-    }
-
-    &:first-child {
-      font-size: 2rem;
-      margin-right: auto;
-      text-transform: initial;
-    }
-
-    a {
-      text-decoration: none;
-      color: $mainText1;
-    }
-
-    &.nav-link-button {
-      border-radius: 15px;
-      padding: 5px 10px;
-      border: 1px solid $mainText1;
-    }
-  }
 }
 
 .main-content {
@@ -50,8 +15,8 @@ body {
 
   .section {
     min-height: 100vh;
-    border-bottom: solid rgb(214, 4, 4) 8px;
     width: 100%;
+    overflow: hidden;
 
     div {
       max-width: 70rem;
@@ -81,22 +46,78 @@ body {
       }
     }
 
+    .content-wrapper--2 {
+      position: relative;
+
+      h2 {
+        @include subHeaders($darkText);
+      }
+
+      h3 {
+        @include infoText($darkText);
+      }
+
+      .top-left-potato-blur {
+        filter: blur(10px);
+        transform: skew(-0.06turn, 18deg) scale(0.7) translate(-90%, 2ex);
+        position: absolute;
+        z-index: 1;
+      }
+
+      .top-mid-potato-blur {
+        filter: blur(15px);
+        transform: scale(0.6) translate(100%, -80%);
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+      }
+
+      .bottom-left-potato-blur {
+        filter: blur(35px);
+        transform: scale(0.4) translate(-150%, 50%);
+        position: absolute;
+        z-index: 1;
+      }
+
+      .bottom-right-potato-blur {
+        filter: blur(35px);
+        transform: scale(0.7) translate(100%, 50%);
+        position: absolute;
+        z-index: 1;
+      }
+
+      .image-wrapper {
+        @include flexCenter(row);
+        position: relative;
+        z-index: 2;
+      }
+    }
+
+    .content-wrapper--3 {
+      position: relative;
+
+      h2 {
+        @include subHeaders($mainText1);
+      }
+
+      h3 {
+        @include infoText($mainText1);
+      }
+    }
+
     &.section--1 {
       @include background($accentColor1);
       background: radial-gradient($accentColor1, $accentGradient1);
+      position: relative;
+      z-index: 10;
     }
     &.section--2 {
       @include background(#f1f1f1);
     }
-  }
-}
-
-@media (max-width: 768px) {
-  .nav-link {
-    display: none;
-
-    &:first-child {
-      display: block;
+    &.section--3 {
+      @include background($accentColor2);
+      background: radial-gradient($accentColor2, $accentGradient2);
     }
   }
 }
